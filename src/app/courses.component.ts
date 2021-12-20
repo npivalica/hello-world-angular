@@ -1,31 +1,15 @@
 import { Component } from "@angular/core";
+
 import { CoursesService } from "./courses.service";
 
 @Component({
     selector: 'courses',
     template: `
-        <h2>{{ title }}</h2>
-        <ul>
-            <li *ngFor="let course of courses"> 
-                {{ course }}
-            </li>
-        </ul>
-        <img [src] = "imageUrl" />
-        <table>
-            <tr>
-            <td [attr.colspan] = "colSpan" > </td>
-            </tr>
-        </table>
-
-        <hr>
+            {{ text | summary }}
         `
 })
 export class CoursesComponent {
-    title = "List of courses";
-    courses;
-    constructor(service: CoursesService){
-        this.courses = service.getCourses();
-    }
-    imageUrl = "https://picsum.photos/400/200";
-    colSpan = 2;
+    text = `
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum quasi alias veritatis enim saepe vero ratione iure nisi, veniam nihil eius dolores vel nemo magnam aut similique tempore odio doloremque nostrum? Quo et harum cupiditate quidem, labore architecto iure necessitatibus?
+    `    
 }
