@@ -10,6 +10,14 @@ import { CoursesService } from "./courses.service";
                 {{ course }}
             </li>
         </ul>
+        <img [src] = "imageUrl" />
+        <table>
+            <tr>
+            <td [attr.colspan] = "colSpan" > </td>
+            </tr>
+        </table>
+
+        <hr>
         `
 })
 export class CoursesComponent {
@@ -18,4 +26,6 @@ export class CoursesComponent {
     constructor(service: CoursesService){
         this.courses = service.getCourses();
     }
+    imageUrl = "https://picsum.photos/400/200";
+    colSpan = 2;
 }
